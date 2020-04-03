@@ -1,0 +1,106 @@
+\documentclass[oneside,senior,etd]{BYUPhys}
+
+\usepackage[utf8]{inputenc}
+\usepackage{rotating}
+
+\usepackage[russian]{babel}
+\usepackage{amsfonts} % Пакеты для математических символов и теорем
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} % Пакеты для вставки графики
+\usepackage{subfig}
+\usepackage{color}
+\usepackage[unicode]{hyperref}
+\usepackage[nottoc]{tocbibind} % Для того, чтобы список литературы отображался в оглавлении
+\usepackage{algorithmicx} % Для записи алгоритмов в псевдокоде
+\usepackage{algpseudocode}
+\usepackage{verbatim} % Для вставок заранее подготовленного текста в режиме as-is
+\usepackage{listings}
+
+\newcommand{\sectionbreak}{\clearpage} % Раздел с новой станицы
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows,positioning}
+\usepackage{adjustbox}
+
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{boldline}
+
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{amsmath}
+
+\usepackage{pifont}
+
+\newcommand{\todo}[1]{\textcolor{red}{#1}}
+
+% DEBUG
+% \usepackage{showframe}
+
+\Chair{Кафедра системного программирования}
+\Lab{~}
+\Year{2020}
+  \Month{Месяц}
+  \City{Москва}
+  \AuthorText{Автор:}
+  \Author{Фамилия Имя Отчество}
+  \AuthorEng{Surname Name}
+  \AcadGroup{627}
+
+  \TitleTop{Название}
+  \TitleMiddle{} % leave empty if you don't need it
+  \TitleBottom{} % leave empty if you don't need it
+  \TitleTopEng{Thesis theme, first line}
+  \TitleMiddleEng{Thesis theme, second line}
+  \TitleBottomEng{Thesis theme, third line} % leave empty if you don't need it
+
+\docname{МАГИСТЕРСКАЯ ДИССЕРТАЦИЯ}
+  \Advisor{ФИО научного руководителя}
+  \AdvisorDegree{степень, звание\\}
+
+\Abstract{
+Аннотация.
+}
+\AbstractEng{Abstract in english}
+
+%%%% DON'T change this. It is here because .sty does not support cyrillic cp properly %%%%
+\University{Московский государственный университет имени М.В.Ломоносова}
+\Faculty{Факультет вычислительной математики и кибернетики}
+\GrText{гр.}
+\AdvisorText{Научный руководитель}
+\AbstractText{Аннотация}
+\ListingText{Листинг}
+\AlgorithmText{Алгоритм}
+
+\begin{document}
+\fixmargins
+ \makepreliminarypages
+
+\oneandhalfspace
+
+\tableofcontents
+
+\section{Введение}
+
+\todo{Лучше писать после написания оставшихся частей диплома.}
+
+Пример цитирования~\cite{tanenbaum2015, halperin08, heartbleed, vishnyakov18}.
+
+\section{Постановка задачи}
+
+Бла бла бла.
+
+\section{Заключение}
+
+Бла бла бла.
+
+\bibliographystyle{gost780u.bst} % Для соответствия требованиям об оформлении списка литературы
+\raggedright
+\bibliography{references}
+
+\end{document}
