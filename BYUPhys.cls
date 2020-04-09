@@ -622,6 +622,11 @@
 \newcommand{\AlgorithmText}[1]{\gdef\@AlgorithmText{#1}}
 \renewcommand{\ALG@name}{\@AlgorithmText}
 
+\RequirePackage{algorithmicx} % Для записи алгоритмов в псевдокоде
+\RequirePackage[noend]{algpseudocode}
+\algnewcommand{\IfThenElse}[3]{% \IfThenElse{<if>}{<then>}{<else>}
+  \State \algorithmicif\ #1\ \algorithmicthen\ #2\ \algorithmicelse\ #3}
+
 \RequirePackage{titlesec}
 \RequirePackage[unicode, hidelinks]{hyperref}
 \hypersetup{colorlinks=false}
