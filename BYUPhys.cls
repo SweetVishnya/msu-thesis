@@ -630,3 +630,5 @@
 \RequirePackage{titlesec}
 \RequirePackage[unicode, hidelinks]{hyperref}
 \hypersetup{colorlinks=false}
+
+\RequirePackage{cite}
