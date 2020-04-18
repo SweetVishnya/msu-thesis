@@ -90,6 +90,9 @@
 \newcommand{\TitleBottom}[1]{\gdef\@TitleBottom{\mbox{#1}}}
 \newcommand{\TitleBottomEng}[1]{\gdef\@TitleBottomEng{\mbox{#1}}}
 
+% Title page text
+\newcommand{\TitlePageText}[1]{\gdef\@TitlePageText{#1}}
+
 % Abstract text
 \newcommand{\Abstract}[1]{\gdef\@Abstract{#1}}
 \newcommand{\AbstractEng}[1]{\gdef\@AbstractEng{#1}}
@@ -381,7 +384,7 @@
 	\renewcommand{\titlepage}{
 	    \thispagestyle{empty}
 	    \begin{center}
-	    \providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{Title Page}{bm:Title}
+	    \providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{\@TitlePageText}{bm:Title}
 		\includegraphics[height=4cm,keepaspectratio]{./gzlogo.png}\\[0.1cm]
 	    %\vspace*{0.375in}
 	    \@University\\
@@ -576,7 +579,7 @@
     \thispagestyle{empty}
     \begin{abstractenv}
     \begin{center}
-    \providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{Abstract}{bm:Abstract}
+    \providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{\@AbstractText}{bm:Abstract}
     \vspace*{0.375in}
     {\bf \@AbstractText}\\[1\baselineskip]
     \@TitleTop\\
@@ -610,7 +613,7 @@
 \newcommand{\acknowledgmentspage}{
     \clearemptydoublepage
     \begin{center}
-    \providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{Acknowledgments}{bm:Acknowledgments}
+    \providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{\@AcknowledgmentsText}{bm:Acknowledgments}
     \vspace*{0.375in}
     {\bf \@AcknowledgmentsText}\\[1\baselineskip]
     \end{center}
