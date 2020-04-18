@@ -153,7 +153,7 @@
   \Author{Author}
   \TitleTop{Title}
   \TitleBottom{ } % default is empty
-  \Abstract{Abstract text goes here.}
+%  \Abstract{Abstract text goes here.}
 %  \Acknowledgments{Acknowledgment text goes here.}
 %  \degree{Bachelor of Science}
   \docname{Master Thesis}
@@ -576,8 +576,9 @@
 % ========================= Abstract ===================================
 
 \newcommand{\abstractpage}{
-    \thispagestyle{empty}
     \begin{abstractenv}
+    \ifdefined\@Abstract
+    \thispagestyle{empty}
     \begin{center}
     \providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{\@AbstractText}{bm:Abstract}
     \vspace*{0.375in}
@@ -589,29 +590,32 @@
     \end{center}
     \renewcommand{\baselinestretch}{1.33}\small\normalsize
     \@Abstract
-%     \vfill
-%
-%    \begin{center}
-%    %\providecommand\pdfbookmark[3][]{} \pdfbookmark[0]{Abstract}{bm:Abstract}
-%    \vspace*{0.375in}
-%    {\bf Abstract}\\[1\baselineskip]
-%    \@TitleTopEng\\
-%    \@TitleMiddleEng\\
-%    \@TitleBottomEng\\[1\baselineskip]
-%    {\em \@AuthorEng}\\[\baselineskip]
-%    \end{center}
-%    \renewcommand{\baselinestretch}{1.33}\small\normalsize
-%    \@AbstractEng
+    \clearemptydoublepage
+    \fi
+
+    \ifdefined\@AbstractEng
+    \thispagestyle{empty}
+    \begin{center}
+    \providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{Abstract}{bm:AbstractEng}
+    \vspace*{0.375in}
+    {\bf Abstract}\\[1\baselineskip]
+    \@TitleTopEng\\
+    \@TitleMiddleEng\\
+    \@TitleBottomEng\\[1\baselineskip]
+    {\em \@AuthorEng}\\[\baselineskip]
+    \end{center}
+    \renewcommand{\baselinestretch}{1.33}\small\normalsize
+    \@AbstractEng
+    \clearemptydoublepage
+    \fi
 
     \ifdefined\@Acknowledgments\acknowledgmentspage\fi
 
     \end{abstractenv}
-    \clearemptydoublepage
   }
 
 % ========================= Acknowledgments ==============================
 \newcommand{\acknowledgmentspage}{
-    \clearemptydoublepage
     \begin{center}
     \providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{\@AcknowledgmentsText}{bm:Acknowledgments}
     \vspace*{0.375in}
@@ -619,6 +623,7 @@
     \end{center}
     \renewcommand{\baselinestretch}{1.33}\small\normalsize
     \@Acknowledgments
+    \clearemptydoublepage
   }
 
 \RequirePackage{float}
