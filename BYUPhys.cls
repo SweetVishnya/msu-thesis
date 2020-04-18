@@ -59,6 +59,7 @@
 \newcommand{\GrText}[1]{\gdef\@GrText{#1}}
 \newcommand{\AcadGroup}[1]{\gdef\@AcadGroup{#1}}
 \newcommand{\AdvisorText}[1]{\gdef\@AdvisorText{#1}}
+\newcommand{\ConsultantText}[1]{\gdef\@ConsultantText{#1}}
 
 \newcommand{\ApprovalText}[1]{\gdef\@ApprovalText{#1}}
 \newcommand{\ApprovalAText}[1]{\gdef\@ApprovalAText{#1}}
@@ -107,6 +108,10 @@
 % The name of the advisor
 \newcommand{\Advisor}[1]{\gdef\@Advisor{#1}}
 \newcommand{\AdvisorDegree}[1]{\gdef\@AdvisorDegree{#1}}
+
+% The name of the consultant
+\newcommand{\Consultant}[1]{\gdef\@Consultant{#1}}
+\newcommand{\ConsultantDegree}[1]{\gdef\@ConsultantDegree{#1}}
 
 % The name of the committee member 2
 \newcommand{\MemberA}[1]{\gdef\@MemberA{#1}}
@@ -401,6 +406,10 @@
 	    %{\large \@Author \\[\baselineskip]}
 	    \textbf{\@AdvisorText:\\}
 	    {\large ~ \@AdvisorDegree~ \@Advisor\\}
+	    \ifdefined\@Consultant
+	        \textbf{\\\@ConsultantText:\\}
+	        {\large ~ \ifdefined\@ConsultantDegree\@ConsultantDegree\fi~ \@Consultant\\}
+	    \fi
 	    \end{flushright}
 	    \vfill
 
