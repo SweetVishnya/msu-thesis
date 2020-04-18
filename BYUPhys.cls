@@ -293,16 +293,16 @@
 }
 \newenvironment{abstractenv}{
    \def\skip@bstr@ctp@ges{\@@skip@bstr@ctp@ges}
-   \afterpage{\skip@bstr@ctp@ges \thispagestyle{empty}}
+   \afterpage{\skip@bstr@ctp@ges}
    \pagestyle{empty}
 }
 
 % Redefine above commands if etd option is specified.  The blank pages make printing nice,
 % but they don't want them in the submitted PDF
-\DeclareOption{etd}{
-    \renewcommand{\clearemptydoublepage}{ \clearpage }
-    \renewenvironment{abstractenv}{\afterpage{\thispagestyle{empty}}\pagestyle{empty}}{}
-  }
+%\DeclareOption{etd}{
+%    \renewcommand{\clearemptydoublepage}{ \clearpage }
+%    \renewenvironment{abstractenv}{\afterpage{\thispagestyle{empty}}\pagestyle{empty}}{}
+%  }
 
 % ------------------------ Load the class and needed packages ---------------------------------
 
@@ -382,8 +382,8 @@
 
 % ============================== Title Page ===============================
 	\renewcommand{\titlepage}{
-	    \thispagestyle{empty}
 	    \begin{center}
+	    \thispagestyle{empty}
 	    \providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{\@TitlePageText}{bm:Title}
 		\includegraphics[height=4cm,keepaspectratio]{./gzlogo.png}\\[0.1cm]
 	    %\vspace*{0.375in}
@@ -421,7 +421,7 @@
 
 	    \@City, \@Year \\[\baselineskip]
 	    \end{center}
-	    \clearemptydoublepage
+	    \cleardoublepage
 	  }
 
 
@@ -578,7 +578,6 @@
 \newcommand{\abstractpage}{
     \begin{abstractenv}
     \ifdefined\@Abstract
-    \thispagestyle{empty}
     \begin{center}
     \providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{\@AbstractText}{bm:Abstract}
     \vspace*{0.375in}
@@ -590,11 +589,10 @@
     \end{center}
     \renewcommand{\baselinestretch}{1.33}\small\normalsize
     \@Abstract
-    \clearemptydoublepage
+    \cleardoublepage
     \fi
 
     \ifdefined\@AbstractEng
-    \thispagestyle{empty}
     \begin{center}
     \providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{Abstract}{bm:AbstractEng}
     \vspace*{0.375in}
@@ -606,7 +604,7 @@
     \end{center}
     \renewcommand{\baselinestretch}{1.33}\small\normalsize
     \@AbstractEng
-    \clearemptydoublepage
+    \cleardoublepage
     \fi
 
     \ifdefined\@Acknowledgments\acknowledgmentspage\fi
@@ -623,7 +621,7 @@
     \end{center}
     \renewcommand{\baselinestretch}{1.33}\small\normalsize
     \@Acknowledgments
-    \clearemptydoublepage
+    \cleardoublepage
   }
 
 \RequirePackage{float}
