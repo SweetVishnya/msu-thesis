@@ -390,7 +390,7 @@
 	    \@University\\
 	    \@Faculty\\
 	    \@Chair\\
-%	    {\scriptsize \@Lab\\[\baselineskip]}
+	    \ifdefined\@Lab{\scriptsize \@Lab\\[\baselineskip]}\fi
 	    \vspace{2.5cm}
 	    {\large \@Author \\[\baselineskip]
 	    %\HRule \\[0.4cm]
