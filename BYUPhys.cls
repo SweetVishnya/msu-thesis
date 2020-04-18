@@ -96,8 +96,8 @@
 \newcommand{\AbstractText}[1]{\gdef\@AbstractText{#1}}
 
 % Acknowledgments text
-%\newcommand{\Acknowledgments}[1]{\gdef\@Acknowledgments{#1}}
-%\newcommand{\AcknowledgmentsText}[1]{\gdef\@AcknowledgmentsText{#1}}
+\newcommand{\Acknowledgments}[1]{\gdef\@Acknowledgments{#1}}
+\newcommand{\AcknowledgmentsText}[1]{\gdef\@AcknowledgmentsText{#1}}
 
 % The author's name
 \newcommand{\AuthorText}[1]{\gdef\@AuthorText{#1}}
@@ -210,7 +210,6 @@
     %\copyrightpage
     %\seniorapprovalpage
     \abstractpage
-%    \acknowledgmentspage
     \fixmargins
     \renewcommand{\clearemptydoublepage}{\cle@remptydoublep@ge}
   }
@@ -601,24 +600,23 @@
 %    \renewcommand{\baselinestretch}{1.33}\small\normalsize
 %    \@AbstractEng
 
+    \ifdefined\@Acknowledgments\acknowledgmentspage\fi
+
     \end{abstractenv}
     \clearemptydoublepage
   }
 
 % ========================= Acknowledgments ==============================
-%\newcommand{\acknowledgmentspage}{
-%    \renewcommand{\baselinestretch}{1}\small\normalsize
-%    \thispagestyle{empty}
-%    \begin{center}
-%    \providecommand\pdfbookmark[3][]{} \pdfbookmark[0]{Acknowledgments}{bm:Acknowledge}
-%    \vspace*{0.375in}
-%    {\Large \@AcknowledgmentsText}\\[3\baselineskip]
-%    \end{center}
-%
-%    \renewcommand{\baselinestretch}{1.66} \small\normalsize%
-%    \@Acknowledgments
-%    \clearemptydoublepage
-%  }
+\newcommand{\acknowledgmentspage}{
+    \clearemptydoublepage
+    \begin{center}
+    \providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{Acknowledgments}{bm:Acknowledgments}
+    \vspace*{0.375in}
+    {\bf \@AcknowledgmentsText}\\[1\baselineskip]
+    \end{center}
+    \renewcommand{\baselinestretch}{1.33}\small\normalsize
+    \@Acknowledgments
+  }
 
 \RequirePackage{float}
 
