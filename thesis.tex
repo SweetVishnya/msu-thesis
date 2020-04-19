@@ -53,11 +53,13 @@
   \AcadGroup{627}
 
   \TitleTop{Название}
-  \TitleMiddle{} % leave empty if you don't need it
-  \TitleBottom{} % leave empty if you don't need it
+  % Раскомментируйте, если нужны еще строчки названия
+  % \TitleMiddle{Вторая строка названия}
+  % \TitleBottom{Третья строка названия}
   \TitleTopEng{Thesis theme, first line}
-  \TitleMiddleEng{Thesis theme, second line}
-  \TitleBottomEng{Thesis theme, third line} % leave empty if you don't need it
+  % Uncomment if you need more title lines
+  % \TitleMiddleEng{Thesis theme, second line}
+  % \TitleBottomEng{Thesis theme, third line}
 
 \docname{МАГИСТЕРСКАЯ ДИССЕРТАЦИЯ}
   \Advisor{ФИО научного руководителя}
@@ -86,6 +88,12 @@
 \AcknowledgmentsText{Благодарности}
 \ListingText{Листинг}
 \AlgorithmText{Алгоритм}
+
+% Set PDF title and author
+\hypersetup{
+  pdftitle={\PDFTitle},
+  pdfauthor={\PDFAuthor}
+}
 
 \begin{document}
 \fixmargins

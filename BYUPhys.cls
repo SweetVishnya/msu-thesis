@@ -152,7 +152,6 @@
   \Month{Month}
   \Author{Author}
   \TitleTop{Title}
-  \TitleBottom{ } % default is empty
 %  \Abstract{Abstract text goes here.}
 %  \Acknowledgments{Acknowledgment text goes here.}
 %  \degree{Bachelor of Science}
@@ -395,8 +394,8 @@
 	    {\large \@Author \\[\baselineskip]
 	    %\HRule \\[0.4cm]
 	    \textbf{\@TitleTop}\\
-	    \textbf{\@TitleMiddle}\\
-	    \textbf{\@TitleBottom}\\}
+	    \ifdefined\@TitleMiddle\textbf{\@TitleMiddle}\\\fi
+	    \ifdefined\@TitleBottom\textbf{\@TitleBottom}\\\fi}
 	    \vspace{1.5cm}
 	    \@docname\\
 	    %\HRule \\[1.5cm]
@@ -582,9 +581,9 @@
     \providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{\@AbstractText}{bm:Abstract}
     \vspace*{0.375in}
     {\bf \@AbstractText}\\[1\baselineskip]
-    \@TitleTop\\
-    \@TitleMiddle\\
-    \@TitleBottom\\[1\baselineskip]
+    \@TitleTop
+    \ifdefined\@TitleMiddle\\\@TitleMiddle\fi
+    \ifdefined\@TitleBottom\\\@TitleBottom\fi\\[1\baselineskip]
     {\em \@Author}\\[\baselineskip]
     \end{center}
     \renewcommand{\baselinestretch}{1.33}\small\normalsize
@@ -597,9 +596,9 @@
     \providecommand\pdfbookmark[3][]{} \pdfbookmark[1]{Abstract}{bm:AbstractEng}
     \vspace*{0.375in}
     {\bf Abstract}\\[1\baselineskip]
-    \@TitleTopEng\\
-    \@TitleMiddleEng\\
-    \@TitleBottomEng\\[1\baselineskip]
+    \@TitleTopEng
+    \ifdefined\@TitleMiddleEng\\\@TitleMiddleEng\fi
+    \ifdefined\@TitleBottomEng\\\@TitleBottomEng\fi\\[1\baselineskip]
     {\em \@AuthorEng}\\[\baselineskip]
     \end{center}
     \renewcommand{\baselinestretch}{1.33}\small\normalsize
@@ -645,3 +644,6 @@
 \hypersetup{colorlinks=false}
 
 \RequirePackage{cite}
+
+\newcommand{\PDFTitle}{\@Author~-~\@TitleTop\ifdefined\@TitleMiddle~\@TitleMiddle\fi\ifdefined\@TitleBottom~\@TitleBottom\fi}
+\newcommand{\PDFAuthor}{\@Author}
