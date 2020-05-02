@@ -370,8 +370,7 @@
 % Redefine the Bibliography to deal with a bookmarking issues
 \let\TEMPbibliography\bibliography
 \renewcommand{\bibliography}{
-  \providecommand\phantomsection{} \phantomsection
-  %\addcontentsline{toc}{chapter}{Литература}
+  \cleardoublepage \phantomsection
   \TEMPbibliography
 }
 
@@ -644,6 +643,8 @@
 \hypersetup{colorlinks=false}
 
 \RequirePackage{cite}
+
+\RequirePackage{bookmark}
 
 \newcommand{\PDFTitle}{\@Author~-~\@TitleTop\ifdefined\@TitleMiddle~\@TitleMiddle\fi\ifdefined\@TitleBottom~\@TitleBottom\fi}
 \newcommand{\PDFAuthor}{\@Author}

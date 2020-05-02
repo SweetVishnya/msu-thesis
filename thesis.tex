@@ -101,6 +101,7 @@
 
 \oneandhalfspace
 
+\pdfbookmark[section]{\contentsname}{toc}
 \tableofcontents
 
 \section{Введение}
@@ -120,5 +121,12 @@
 \bibliographystyle{gost780u.bst} % Для соответствия требованиям об оформлении списка литературы
 \raggedright
 \bibliography{references}
+
+% Раскомментируйте, если нужно приложение
+% \appendix
+
+% \cleardoublepage \phantomsection
+% \section*{Приложение}
+% \addcontentsline{toc}{section}{Приложение}
 
 \end{document}
