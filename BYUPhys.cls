@@ -648,3 +648,5 @@
 
 \newcommand{\PDFTitle}{\@Author~-~\@TitleTop\ifdefined\@TitleMiddle~\@TitleMiddle\fi\ifdefined\@TitleBottom~\@TitleBottom\fi}
 \newcommand{\PDFAuthor}{\@Author}
+
+\emergencystretch 3em
