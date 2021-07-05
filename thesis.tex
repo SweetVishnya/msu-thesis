@@ -1,5 +1,6 @@
 \documentclass[oneside,senior,etd]{BYUPhys}
 
+\usepackage{cmap} % Для корректной кодировки в pdf
 \usepackage[utf8]{inputenc}
 \usepackage{rotating}
 
@@ -34,6 +35,21 @@
 \usepackage{amsmath}
 
 \usepackage{pifont}
+\usepackage{indentfirst} % Делать отступ в первом начала параграфа
+
+% Общие параметры листингов
+\lstset{
+	%frame=TB,
+	showstringspaces=false,
+	tabsize=4,
+	basicstyle=\linespread{1.0}\tt\small, % делаем листинги компактнее
+	breaklines=true,
+	xleftmargin=.072\textwidth, xrightmargin=.072\textwidth, % центрирование
+	texcl=true, % русские буквы в комментах
+	captionpos=b,
+	aboveskip=\baselineskip,
+	commentstyle=\tt
+}
 
 \newcommand{\todo}[1]{\textcolor{red}{#1}}
 
