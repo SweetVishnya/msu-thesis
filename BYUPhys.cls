@@ -392,11 +392,10 @@
 	    \vspace{2.5cm}
 	    {\large \@Author \\[\baselineskip]
 	    %\HRule \\[0.4cm]
-	    \textbf{\@TitleTop}
-	    \ifdefined\@TitleMiddle\\\textbf{\@TitleMiddle}\fi
-	    \ifdefined\@TitleBottom\\\textbf{\@TitleBottom}\fi
-		\\[\baselineskip]
-	    \ifdefined\@TitleTopEng\textbf{\@TitleTopEng}\\
+	    \textbf{\@TitleTop}\\
+	    \ifdefined\@TitleMiddle\textbf{\@TitleMiddle}\\\fi
+	    \ifdefined\@TitleBottom\textbf{\@TitleBottom}\\\fi
+	    \ifdefined\@TitleTopEng\textbf{\\\@TitleTopEng}\\\fi
 	    \ifdefined\@TitleMiddleEng\textbf{\@TitleMiddleEng}\\\fi
 	    \ifdefined\@TitleBottomEng\textbf{\@TitleBottomEng}\\\fi}
 	    \vspace{1.5cm}
